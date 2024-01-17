@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">appListaVIP</string>
+    <string name="btnFinalizar">Finalizar</string>
+    <string name="btnLimpar">Limpar</string>
+    <string name="btnSalvar">Salvar</string>
+    <string name="ptxtCurso">Curso desejado</string>
+    <string name="ptxtPrimerioNome">Primeiro nome</string>
+    <string name="ptxtSobrenome">Sobrenome</string>
+    <string name="ptxtTelefone">Telefone</string>
+    <string name="txtInsira">Insira as informações abaixo.</string>
+    <string name="txtListaVip">Lista VIP</string>
 </resources>
