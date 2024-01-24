@@ -47,12 +47,14 @@ public class MainActivity extends AppCompatActivity {
 
         dadosOutraPessoa = "Primeiro nome: ";
                 dadosOutraPessoa += outraPessoa.getPrimeiroNome();
-                dadosOutraPessoa += "Sobrenome: ";
+                dadosOutraPessoa += " Sobrenome: ";
                 dadosOutraPessoa += outraPessoa.getSobrenome();
-                dadosOutraPessoa += "Curso desejado: ";
+                dadosOutraPessoa += " Curso desejado: ";
                 dadosOutraPessoa += outraPessoa.getCursoDesejado();
-                dadosOutraPessoa += "Telefone: ";
+                dadosOutraPessoa += " Telefone: ";
                 dadosOutraPessoa += outraPessoa.getTelefone();
+
+
 
     }
 }
