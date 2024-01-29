@@ -7,7 +7,7 @@
     tools:context=".view.MainActivity">
 
     <TextView
-        android:id="@+id/txtListaVip"
+        android:id="@+id/txtTitulo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/txtListaVip"
@@ -29,11 +29,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.505"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtListaVip"
+        app:layout_constraintTop_toBottomOf="@+id/txtTitulo"
         app:layout_constraintVertical_bias="0.035" />
 
     <EditText
-        android:id="@+id/ptxtPrimeiroNome"
+        android:id="@+id/editPrimeiroNome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="400dp"
@@ -44,15 +44,15 @@
         android:textColorHint="#78909C"
         android:textSize="28sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/ptxtSobrenome"
+        app:layout_constraintEnd_toEndOf="@+id/editSobrenome"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/ptxtSobrenome"
+        app:layout_constraintStart_toStartOf="@+id/editSobrenome"
         app:layout_constraintTop_toTopOf="@+id/txtInsira"
         app:layout_constraintVertical_bias="0.766"
         tools:ignore="TextContrastCheck" />
 
     <EditText
-        android:id="@+id/ptxtCurso"
+        android:id="@+id/editCurso"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:autofillHints=""
@@ -62,15 +62,15 @@
         android:textColorHint="#78909C"
         android:textSize="28sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/ptxtTelefone"
+        app:layout_constraintEnd_toEndOf="@+id/editTelefone"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/ptxtTelefone"
-        app:layout_constraintTop_toBottomOf="@+id/ptxtPrimeiroNome"
+        app:layout_constraintStart_toStartOf="@+id/editTelefone"
+        app:layout_constraintTop_toBottomOf="@+id/editPrimeiroNome"
         app:layout_constraintVertical_bias="0.151"
         tools:ignore="TextContrastCheck" />
 
     <EditText
-        android:id="@+id/ptxtTelefone"
+        android:id="@+id/editTelefone"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="144dp"
@@ -82,12 +82,12 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/ptxtCurso"
+        app:layout_constraintTop_toTopOf="@+id/editCurso"
         app:layout_constraintVertical_bias="0.343"
         android:autofillHints="" />
 
     <EditText
-        android:id="@+id/ptxtSobrenome"
+        android:id="@+id/editSobrenome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="64dp"
@@ -99,10 +99,10 @@
         android:textColorHint="#78909C"
         android:textSize="28sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/ptxtCurso"
+        app:layout_constraintEnd_toEndOf="@+id/editCurso"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/ptxtCurso"
-        app:layout_constraintTop_toTopOf="@+id/ptxtPrimeiroNome"
+        app:layout_constraintStart_toStartOf="@+id/editCurso"
+        app:layout_constraintTop_toTopOf="@+id/editPrimeiroNome"
         app:layout_constraintVertical_bias="0.156" />
 
     <Button
@@ -115,7 +115,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.093"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ptxtCurso"
+        app:layout_constraintTop_toBottomOf="@+id/editCurso"
         app:layout_constraintVertical_bias="1.0" />
 
     <Button
@@ -141,7 +141,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.95"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ptxtCurso"
+        app:layout_constraintTop_toBottomOf="@+id/editCurso"
         app:layout_constraintVertical_bias="1.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
