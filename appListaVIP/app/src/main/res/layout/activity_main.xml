@@ -7,7 +7,7 @@
     tools:context=".view.MainActivity">
 
     <TextView
-        android:id="@+id/txtTitulo"
+        android:id="@+id/txtTituloApp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/txtListaVip"
@@ -29,7 +29,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.505"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtTitulo"
+        app:layout_constraintTop_toBottomOf="@+id/txtTituloApp"
         app:layout_constraintVertical_bias="0.035" />
 
     <EditText
@@ -44,15 +44,15 @@
         android:textColorHint="#78909C"
         android:textSize="28sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/editSobrenome"
+        app:layout_constraintEnd_toEndOf="@+id/editSobreNomeAluno"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/editSobrenome"
+        app:layout_constraintStart_toStartOf="@+id/editSobreNomeAluno"
         app:layout_constraintTop_toTopOf="@+id/txtInsira"
         app:layout_constraintVertical_bias="0.766"
         tools:ignore="TextContrastCheck" />
 
     <EditText
-        android:id="@+id/editCurso"
+        android:id="@+id/editNomeCurso"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:autofillHints=""
@@ -62,15 +62,15 @@
         android:textColorHint="#78909C"
         android:textSize="28sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/editTelefone"
+        app:layout_constraintEnd_toEndOf="@+id/editTelefoneContato"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/editTelefone"
+        app:layout_constraintStart_toStartOf="@+id/editTelefoneContato"
         app:layout_constraintTop_toBottomOf="@+id/editPrimeiroNome"
         app:layout_constraintVertical_bias="0.151"
         tools:ignore="TextContrastCheck" />
 
     <EditText
-        android:id="@+id/editTelefone"
+        android:id="@+id/editTelefoneContato"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="144dp"
@@ -82,12 +82,12 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/editCurso"
+        app:layout_constraintTop_toTopOf="@+id/editNomeCurso"
         app:layout_constraintVertical_bias="0.343"
         android:autofillHints="" />
 
     <EditText
-        android:id="@+id/editSobrenome"
+        android:id="@+id/editSobreNomeAluno"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="64dp"
@@ -99,9 +99,9 @@
         android:textColorHint="#78909C"
         android:textSize="28sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/editCurso"
+        app:layout_constraintEnd_toEndOf="@+id/editNomeCurso"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/editCurso"
+        app:layout_constraintStart_toStartOf="@+id/editNomeCurso"
         app:layout_constraintTop_toTopOf="@+id/editPrimeiroNome"
         app:layout_constraintVertical_bias="0.156" />
 
@@ -115,7 +115,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.093"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editCurso"
+        app:layout_constraintTop_toBottomOf="@+id/editNomeCurso"
         app:layout_constraintVertical_bias="1.0" />
 
     <Button
@@ -141,7 +141,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.95"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editCurso"
+        app:layout_constraintTop_toBottomOf="@+id/editNomeCurso"
         app:layout_constraintVertical_bias="1.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

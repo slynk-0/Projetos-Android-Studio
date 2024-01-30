@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.Button;
+import android.widget.EditText;
 
 import com.example.applistavip.R;
 import com.example.applistavip.model.Pessoa;
@@ -14,6 +16,20 @@ public class MainActivity extends AppCompatActivity {
     Pessoa outraPessoa; //Definindo o objeto outraPessoa.
 
     Pessoa dados;
+
+
+    //Através da declaração da Classe EditText, estão sendo criados os objetos do Layout, que antes
+    //eram apenas elementos no XML.
+
+    EditText editPrimeiroNome;
+    EditText editSobreNomeAluno;
+    EditText editNomeCurso;
+    EditText editTelefoneContato;
+
+    //Fazendo a mesma coisa, porém com os botões, mas utilizando a classe Button.
+    Button btnSalvar;
+    Button btnLimpar;
+    Button btnFinalizar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +53,21 @@ public class MainActivity extends AppCompatActivity {
         outraPessoa.setCursoDesejado("Desenvolvimento em C#");
         outraPessoa.setTelefone("2934-2445");
 
+        //Associando os ids dos componentes do Layout e associando aos objetos em si.
+        editPrimeiroNome = findViewById(R.id.editPrimeiroNome);
+        editSobreNomeAluno = findViewById(R.id.editSobreNomeAluno);
+        editNomeCurso = findViewById(R.id.editNomeCurso);
+        editTelefoneContato = findViewById(R.id.editTelefoneContato);
+
+        btnFinalizar = findViewById(R.id.btnFinalizar);
+        btnLimpar = findViewById(R.id.btnLimpar);
+        btnSalvar = findViewById(R.id.btnSalvar);
+
+        editPrimeiroNome.setText(pessoa.getPrimeiroNome());
+        editSobreNomeAluno.setText(pessoa.getSobrenome());
+        editTelefoneContato.setText(pessoa.getTelefone());
+        editNomeCurso.setText(pessoa.getCursoDesejado());
+
         /*
 
         dados = "Primeiro nome: ";
@@ -59,6 +90,7 @@ public class MainActivity extends AppCompatActivity {
 
          */
 
+        //Checando no Logcat se os objetos estão com seus atributos.
         Log.i("POO Android", "Objeto pessoa: " + pessoa.toString());
         Log.i("POO Android", "Objeto outraPessoa: " + outraPessoa.toString());
 
