@@ -4,8 +4,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.example.applistavip.R;
 import com.example.applistavip.model.Pessoa;
@@ -63,10 +65,47 @@ public class MainActivity extends AppCompatActivity {
         btnLimpar = findViewById(R.id.btnLimpar);
         btnSalvar = findViewById(R.id.btnSalvar);
 
+        //Definindo os campos preenchíveis do Layout com o setText utilizando do método get.
+
         editPrimeiroNome.setText(pessoa.getPrimeiroNome());
         editSobreNomeAluno.setText(pessoa.getSobrenome());
         editTelefoneContato.setText(pessoa.getTelefone());
         editNomeCurso.setText(pessoa.getCursoDesejado());
+
+
+        //Método que aciona uma ação ao clicar no btnLimpar. No caso a ação é redefinir
+        //os campos preenchíveis.
+        btnLimpar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                editPrimeiroNome.setText("");
+                editSobreNomeAluno.setText("");
+                editNomeCurso.setText("");
+                editTelefoneContato.setText("");
+            }
+        });
+
+        btnFinalizar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(MainActivity.this, "Obrigado" +
+                        "por utilizar!", Toast.LENGTH_SHORT).show();
+                finish();
+
+            }
+        });
+
+        btnSalvar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                pessoa.setPrimeiroNome(editPrimeiroNome.getText().toString());
+                pessoa.setSobrenome(editSobreNomeAluno.getText().toString());
+                pessoa.setCursoDesejado(editNomeCurso.getText().toString());
+                pessoa.setTelefone(editTelefoneContato.getText().toString());
+
+                Toast.makeText(MainActivity.this, "Salvo" + pessoa.toString(), Toast.LENGTH_SHORT).show();
+            }
+        });
 
         /*
 
