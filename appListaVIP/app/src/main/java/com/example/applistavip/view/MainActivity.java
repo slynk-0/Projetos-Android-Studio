@@ -10,12 +10,15 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.applistavip.R;
+import com.example.applistavip.controller.PessoaController;
 import com.example.applistavip.model.Pessoa;
 
 public class MainActivity extends AppCompatActivity {
 
     Pessoa pessoa; //Instanciando a Classe Pessoa através do Construtor e definindo o objeto pessoa.
     Pessoa outraPessoa; //Definindo o objeto outraPessoa.
+
+    PessoaController controller;
 
     Pessoa dados;
 
@@ -40,6 +43,8 @@ public class MainActivity extends AppCompatActivity {
 
         pessoa = new Pessoa(); //Criando um objeto para a classe Pessoa.
         outraPessoa = new Pessoa();
+        controller = new PessoaController();
+
         String dados; //Definindo uma String para ser usada para captar todos os dados de um objeto.
         String dadosOutraPessoa;
 
@@ -104,6 +109,8 @@ public class MainActivity extends AppCompatActivity {
                 pessoa.setTelefone(editTelefoneContato.getText().toString());
 
                 Toast.makeText(MainActivity.this, "Salvo" + pessoa.toString(), Toast.LENGTH_SHORT).show();
+
+                controller.salvar(pessoa);
             }
         });
 
