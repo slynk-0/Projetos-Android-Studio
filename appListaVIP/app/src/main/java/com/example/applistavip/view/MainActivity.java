@@ -2,6 +2,7 @@ package com.example.applistavip.view;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -14,6 +15,14 @@ import com.example.applistavip.controller.PessoaController;
 import com.example.applistavip.model.Pessoa;
 
 public class MainActivity extends AppCompatActivity {
+
+
+    //Instanciando a classe SharedPreferences que é nativa do Android e também o object preferences.
+    SharedPreferences preferences;
+
+    //Definindo um atributo que contém o nome que é a referência para os dados serem armazenados.
+    public static final String NOME_PREFERENCES = "pref listavip";
+
     Pessoa pessoa; //Instanciando a Classe Pessoa através do Construtor e definindo o objeto pessoa.
     Pessoa outraPessoa; //Definindo o objeto outraPessoa.
 
@@ -36,6 +45,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        // Instanciando o SharedPreferences e logo em seguida a criação da listavip para o armazenamento dos dados.
+        preferences = getSharedPreferences(NOME_PREFERENCES, 0);
+        SharedPreferences.Editor listavip = preferences.edit();
 
         pessoa = new Pessoa(); //Criando um objeto para a classe Pessoa.
         outraPessoa = new Pessoa();
@@ -95,10 +108,11 @@ public class MainActivity extends AppCompatActivity {
         btnSalvar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                pessoa.setPrimeiroNome(editPrimeiroNome.getText().toString());
-                pessoa.setSobrenome(editSobreNomeAluno.getText().toString());
-                pessoa.setCursoDesejado(editNomeCurso.getText().toString());
-                pessoa.setTelefone(editTelefoneContato.getText().toString());
+                listavip.putString("primeiroNome", pessoa.getPrimeiroNome());
+                listavip.putString("sobrenome", pessoa.getSobrenome());
+                listavip.putString("nomeCurso", pessoa.getCursoDesejado());
+                listavip.putString("nomeTelefoneContato", pessoa.getTelefone());
+                listavip.apply();
 
                 Toast.makeText(MainActivity.this, "Salvo" + pessoa.toString(), Toast.LENGTH_SHORT).show();
 
