@@ -21,11 +21,10 @@ public class MainActivity extends AppCompatActivity {
     SharedPreferences preferences;
 
     //Definindo um atributo que contém o nome que é a referência para os dados serem armazenados.
-    public static final String NOME_PREFERENCES = "pref listavip";
+    public static final String NOME_PREFERENCES = "pref listavip"; //pref listavip é o nome de referência
+    //da SharedPreferences
 
     Pessoa pessoa; //Instanciando a Classe Pessoa através do Construtor e definindo o objeto pessoa.
-    Pessoa outraPessoa; //Definindo o objeto outraPessoa.
-
     PessoaController controller;
 
     //Através da declaração da Classe EditText, estão sendo criados os objetos do Layout, que antes
@@ -46,27 +45,27 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // Instanciando o SharedPreferences e logo em seguida a criação da listavip para o armazenamento dos dados.
+        // Instanciando o SharedPreferences e logo em seguida a referência listavip para o armazenamento dos dados.
         preferences = getSharedPreferences(NOME_PREFERENCES, 0);
         SharedPreferences.Editor listavip = preferences.edit();
 
         pessoa = new Pessoa(); //Criando um objeto para a classe Pessoa.
-        outraPessoa = new Pessoa();
         controller = new PessoaController();
 
-        String dadosOutraPessoa;
 
-        //Definindo valores para os atributos criados na classe Pessoa e outraPessoa:
+        //Obtendo as Strings do que está associado no preferences para ser exibidas.
+        pessoa.setPrimeiroNome(preferences.getString("primeiroNome", ""));
+        pessoa.setSobrenome(preferences.getString("sobrenome", ""));
+        pessoa.setCursoDesejado(preferences.getString("nomeCurso", ""));
+        pessoa.setTelefone(preferences.getString("nomeTelefoneContato", ""));
 
-        pessoa.setPrimeiroNome("Breno");
-        pessoa.setSobrenome("Sodré Bertunes");
-        pessoa.setCursoDesejado("Desenvolvimento Android");
-        pessoa.setTelefone("4002-8922");
+        /*
+        editPrimeiroNome.setText(pessoa.getPrimeiroNome());
+        editSobreNomeAluno.setText(pessoa.getSobrenome());
+        editNomeCurso.setText(pessoa.getCursoDesejado());
+        editTelefoneContato.setText(pessoa.getTelefone());
+         */
 
-        outraPessoa.setPrimeiroNome("John");
-        outraPessoa.setSobrenome("Doe");
-        outraPessoa.setCursoDesejado("Desenvolvimento em C#");
-        outraPessoa.setTelefone("2934-2445");
 
         //Associando os ids dos componentes do Layout e associando aos objetos em si.
         editPrimeiroNome = findViewById(R.id.editPrimeiroNome);
@@ -96,7 +95,6 @@ public class MainActivity extends AppCompatActivity {
                 editTelefoneContato.setText("");
             }
         });
-
         btnFinalizar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -108,6 +106,11 @@ public class MainActivity extends AppCompatActivity {
         btnSalvar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                pessoa.setPrimeiroNome(editPrimeiroNome.getText().toString());
+                pessoa.setSobrenome(editSobreNomeAluno.getText().toString());
+                pessoa.setCursoDesejado(editNomeCurso.getText().toString());
+                pessoa.setTelefone(editTelefoneContato.getText().toString());
                 listavip.putString("primeiroNome", pessoa.getPrimeiroNome());
                 listavip.putString("sobrenome", pessoa.getSobrenome());
                 listavip.putString("nomeCurso", pessoa.getCursoDesejado());
@@ -122,6 +125,5 @@ public class MainActivity extends AppCompatActivity {
 
         //Checando no Logcat se os objetos estão com seus atributos.
         Log.i("POO Android", "Objeto pessoa: " + pessoa.toString());
-        Log.i("POO Android", "Objeto outraPessoa: " + outraPessoa.toString());
     }
 }
