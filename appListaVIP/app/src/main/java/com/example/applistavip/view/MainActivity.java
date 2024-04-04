@@ -93,6 +93,9 @@ public class MainActivity extends AppCompatActivity {
                 editSobreNomeAluno.setText("");
                 editNomeCurso.setText("");
                 editTelefoneContato.setText("");
+
+                listavip.clear();
+                listavip.apply();
             }
         });
         btnFinalizar.setOnClickListener(new View.OnClickListener() {
