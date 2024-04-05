@@ -18,11 +18,9 @@ public class MainActivity extends AppCompatActivity {
 
 
     //Instanciando a classe SharedPreferences que é nativa do Android e também o object preferences.
-    SharedPreferences preferences;
+
 
     //Definindo um atributo que contém o nome que é a referência para os dados serem armazenados.
-    public static final String NOME_PREFERENCES = "pref listavip"; //pref listavip é o nome de referência
-    //da SharedPreferences
 
     Pessoa pessoa; //Instanciando a Classe Pessoa através do Construtor e definindo o objeto pessoa.
     PessoaController controller;
@@ -46,18 +44,14 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         // Instanciando o SharedPreferences e logo em seguida a referência listavip para o armazenamento dos dados.
-        preferences = getSharedPreferences(NOME_PREFERENCES, 0);
-        SharedPreferences.Editor listavip = preferences.edit();
+
 
         pessoa = new Pessoa(); //Criando um objeto para a classe Pessoa.
-        controller = new PessoaController();
+        controller = new PessoaController(MainActivity.this);
+
+        controller.buscar(pessoa);
 
 
-        //Obtendo as Strings do que está associado no preferences para ser exibidas.
-        pessoa.setPrimeiroNome(preferences.getString("primeiroNome", ""));
-        pessoa.setSobrenome(preferences.getString("sobrenome", ""));
-        pessoa.setCursoDesejado(preferences.getString("nomeCurso", ""));
-        pessoa.setTelefone(preferences.getString("nomeTelefoneContato", ""));
 
         /*
         editPrimeiroNome.setText(pessoa.getPrimeiroNome());
@@ -77,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
         btnLimpar = findViewById(R.id.btnLimpar);
         btnSalvar = findViewById(R.id.btnSalvar);
 
-        //Definindo os campos preenchíveis do Layout com o setText utilizando do método get.
+        //Definindo os campos preenchíveis do Layout com o setText e utilizando do método get.
 
         editPrimeiroNome.setText(pessoa.getPrimeiroNome());
         editSobreNomeAluno.setText(pessoa.getSobrenome());
@@ -94,8 +88,8 @@ public class MainActivity extends AppCompatActivity {
                 editNomeCurso.setText("");
                 editTelefoneContato.setText("");
 
-                listavip.clear();
-                listavip.apply();
+                controller.limpar();
+
             }
         });
         btnFinalizar.setOnClickListener(new View.OnClickListener() {
@@ -114,11 +108,6 @@ public class MainActivity extends AppCompatActivity {
                 pessoa.setSobrenome(editSobreNomeAluno.getText().toString());
                 pessoa.setCursoDesejado(editNomeCurso.getText().toString());
                 pessoa.setTelefone(editTelefoneContato.getText().toString());
-                listavip.putString("primeiroNome", pessoa.getPrimeiroNome());
-                listavip.putString("sobrenome", pessoa.getSobrenome());
-                listavip.putString("nomeCurso", pessoa.getCursoDesejado());
-                listavip.putString("nomeTelefoneContato", pessoa.getTelefone());
-                listavip.apply();
 
                 Toast.makeText(MainActivity.this, "Salvo" + pessoa.toString(), Toast.LENGTH_SHORT).show();
 
