@@ -11,12 +11,12 @@ public class PessoaController {
 
 
     SharedPreferences preferences;
-    SharedPreferences.Editor listavip;
-    public static final String PREFERENCE_REFERENCE = "ref listavip";
+    SharedPreferences.Editor listavip; //listavip é a referência de armazenagem dos dados..
+    public static final String PREFERENCE_REFERENCE = "ref listavip"; //identificador das preferences
 
     public PessoaController(MainActivity mainActivity) {
         preferences = mainActivity.getSharedPreferences(PREFERENCE_REFERENCE, 0);
-        listavip = preferences.edit();
+        listavip = preferences.edit(); //o .edit permite a edição dessa preferences.
 
     }
 

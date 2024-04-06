@@ -11,8 +11,12 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.applistavip.R;
+import com.example.applistavip.controller.CursoController;
 import com.example.applistavip.controller.PessoaController;
+import com.example.applistavip.model.Curso;
 import com.example.applistavip.model.Pessoa;
+
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -25,6 +29,8 @@ public class MainActivity extends AppCompatActivity {
     Pessoa pessoa; //Instanciando a Classe Pessoa através do Construtor e definindo o objeto pessoa.
     PessoaController controller;
 
+    CursoController cursoController;
+
     //Através da declaração da Classe EditText, estão sendo criados os objetos do Layout, que antes
     //eram apenas elementos no XML.
 
@@ -32,6 +38,8 @@ public class MainActivity extends AppCompatActivity {
     EditText editSobreNomeAluno;
     EditText editNomeCurso;
     EditText editTelefoneContato;
+
+    List<Curso> listaDeCursos; //lista que recebe o objeto curso e define o listaDeCursos
 
     //Fazendo a mesma coisa, porém com os botões, mas utilizando a classe Button.
     Button btnSalvar;
@@ -51,6 +59,11 @@ public class MainActivity extends AppCompatActivity {
 
         controller.buscar(pessoa);
 
+        cursoController = new CursoController();
+        listaDeCursos = cursoController.getListaDeCursos();
+
+
+        cursoController.getListaDeCursos();
 
 
         /*
