@@ -2,20 +2,21 @@ package com.example.applistavip.view;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.example.applistavip.R;
 import com.example.applistavip.controller.CursoController;
 import com.example.applistavip.controller.PessoaController;
-import com.example.applistavip.model.Curso;
 import com.example.applistavip.model.Pessoa;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
@@ -39,12 +40,17 @@ public class MainActivity extends AppCompatActivity {
     EditText editNomeCurso;
     EditText editTelefoneContato;
 
-    List<Curso> listaDeCursos; //lista que recebe o objeto curso e define o listaDeCursos
+    List<String> nomesDosCursos;
+    
+
+
 
     //Fazendo a mesma coisa, porém com os botões, mas utilizando a classe Button.
     Button btnSalvar;
     Button btnLimpar;
     Button btnFinalizar;
+
+    Spinner spinner;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,7 +66,8 @@ public class MainActivity extends AppCompatActivity {
         controller.buscar(pessoa);
 
         cursoController = new CursoController();
-        listaDeCursos = cursoController.getListaDeCursos();
+        nomesDosCursos = cursoController.dadosParaSpinner();
+
 
 
         cursoController.getListaDeCursos();
@@ -83,6 +90,14 @@ public class MainActivity extends AppCompatActivity {
         btnFinalizar = findViewById(R.id.btnFinalizar);
         btnLimpar = findViewById(R.id.btnLimpar);
         btnSalvar = findViewById(R.id.btnSalvar);
+
+        spinner = findViewById(R.id.spinner);
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1);
+
+        adapter.setDropDownViewResource(android.R.layout.simple_list_item_1);
+
+        spinner.setAdapter(adapter);
 
         //Definindo os campos preenchíveis do Layout com o setText e utilizando do método get.
 
