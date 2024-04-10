@@ -48,42 +48,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/editSobreNomeAluno"
         app:layout_constraintTop_toTopOf="@+id/txtInsira"
-        app:layout_constraintVertical_bias="0.435"
-        tools:ignore="TextContrastCheck" />
-
-    <EditText
-        android:id="@+id/editTelefoneContato"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="144dp"
-        android:autofillHints=""
-        android:ems="10"
-        android:hint="@string/ptxtTelefone"
-        android:inputType="text"
-        android:textColorHint="#78909C"
-        android:textSize="28sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/editNomeCurso"
-        app:layout_constraintVertical_bias="0.29" />
-
-    <EditText
-        android:id="@+id/editNomeCurso"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:autofillHints=""
-        android:ems="10"
-        android:hint="@string/ptxtCurso"
-        android:inputType="text"
-        android:textColorHint="#78909C"
-        android:textSize="28sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/editTelefoneContato"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/editTelefoneContato"
-        app:layout_constraintTop_toBottomOf="@+id/editPrimeiroNome"
-        app:layout_constraintVertical_bias="0.136"
+        app:layout_constraintVertical_bias="0.537"
         tools:ignore="TextContrastCheck" />
 
     <EditText
@@ -103,7 +68,43 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/editNomeCurso"
         app:layout_constraintTop_toTopOf="@+id/editPrimeiroNome"
-        app:layout_constraintVertical_bias="0.141" />
+        app:layout_constraintVertical_bias="0.145" />
+
+    <EditText
+        android:id="@+id/editNomeCurso"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:autofillHints=""
+        android:ems="10"
+        android:hint="@string/ptxtCurso"
+        android:inputType="text"
+        android:textColorHint="#78909C"
+        android:textSize="28sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/editTelefoneContato"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/editTelefoneContato"
+        app:layout_constraintTop_toBottomOf="@+id/editPrimeiroNome"
+        app:layout_constraintVertical_bias="0.14"
+        tools:ignore="TextContrastCheck" />
+
+    <EditText
+        android:id="@+id/editTelefoneContato"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="144dp"
+        android:autofillHints=""
+        android:ems="10"
+        android:hint="@string/ptxtTelefone"
+        android:inputType="text"
+        android:textColorHint="#78909C"
+        android:textSize="28sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/editNomeCurso"
+        app:layout_constraintVertical_bias="0.307" />
 
     <TextView
         android:id="@+id/textView"
@@ -167,7 +168,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editNomeCurso"
         app:layout_constraintVertical_bias="0.71" />
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

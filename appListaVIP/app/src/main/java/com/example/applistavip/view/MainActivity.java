@@ -93,7 +93,8 @@ public class MainActivity extends AppCompatActivity {
 
         spinner = findViewById(R.id.spinner);
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1);
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1
+        , cursoController.dadosParaSpinner());
 
         adapter.setDropDownViewResource(android.R.layout.simple_list_item_1);
 

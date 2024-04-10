@@ -9,4 +9,5 @@
     <string name="ptxtTelefone">Telefone</string>
     <string name="txtInsira">Insira as informações abaixo.</string>
     <string name="txtListaVip">Lista VIP</string>
+    <string name="selecione_um_curso">Selecione um curso:</string>
 </resources>
